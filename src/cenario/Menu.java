@@ -11,21 +11,16 @@ import javax.swing.JPanel;
 
 public class Menu extends JPanel{
 	private Goal goal;
-//	private JLabel label;
 	private Result result2;
 	
 	public Menu() {
 		goal=new Goal();
-//		label=new JLabel();
 		result2=new Result();
 		setBackground(Color.lightGray);
 		JButton result=new JButton("RESULTADO");
 		result.setBackground(Color.ORANGE);
 		result.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				label.setText(showResult());
-//				add(label);	
-//				result2.setPrint(showResult());
 				result2.setLabel(showResult());
 			}
 		});
@@ -41,8 +36,6 @@ public class Menu extends JPanel{
 				goal.setContClick();
 				goal.setResultLeftHand();
 				goal.setResultRightHand();
-//				label.setText(null);
-//				add(label);
 				result2.clearLabel();
 			}
 		});
@@ -64,6 +57,5 @@ public class Menu extends JPanel{
 	public Result getResult() {
 		return this.result2;
 	}
-	
 	
 }

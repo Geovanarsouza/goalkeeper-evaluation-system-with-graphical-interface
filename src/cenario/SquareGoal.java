@@ -14,7 +14,6 @@ public class SquareGoal {
 	private JButton button;
 	private Types type;
 	
-	
 	public SquareGoal(int line,int column) {
 		this.column=column;
 		this.line=line;
@@ -24,11 +23,6 @@ public class SquareGoal {
 	
 	public JButton createButton() {
 		JButton button=new JButton();
-//		button.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				button.setIcon(new ImageIcon(new ImageIcon("img/bola.jpg").getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
-//			}
-//		});
 		if(type==Types.BEAM) {
 			button.setBackground(Color.WHITE);
 			button.setBorder(BorderFactory.createLineBorder(Color.WHITE, 2));
