@@ -36,6 +36,7 @@ public class Menu extends JPanel{
 				goal.setContClick();
 				goal.setResultLeftHand();
 				goal.setResultRightHand();
+				goal.setResultPosition();
 				result2.clearLabel();
 			}
 		});
@@ -45,8 +46,9 @@ public class Menu extends JPanel{
 		String s="";
 		s+="GOLS FEITOS:"+goal.getResultPlayer()+" ***** ";
 		s+="GOLS DEFENDIDOS:"+goal.getResultMachine()+" ***** ";
-		s+="CHUTE NA MÃO DIREITA:"+goal.getReturnRightHand()+" ***** ";
-		s+="CHUTE NA MÃO ESQUERDA:"+goal.getResultLeftHand();
+		s+="DEFESA NA MÃO DIREITA:"+goal.getResultRightHand()+" ***** ";
+		s+="DEFESA NA MÃO ESQUERDA:"+goal.getResultLeftHand()+" ***** ";
+		s+="DEFESA NA POSIÇÃO INICIAL:"+goal.getResultPosition();
 		return s;
 	}
 	

@@ -24,6 +24,7 @@ public class Goal extends JPanel{
 	private int resultPlayer;
 	private int resultLeftHand;
 	private int resultRightHand;
+	private int resultPosition;
 	
 	public Goal() {
 		this.contClick=0;
@@ -31,6 +32,7 @@ public class Goal extends JPanel{
 		this.resultPlayer=0;
 		this.resultLeftHand=0;
 		this.resultRightHand=0;
+		resultPosition=0;
 		goal=new ArrayList<SquareGoal>();
 		clearSquare=new ArrayList<SquareGoal>();
 		this.setBackground(Color.GRAY);
@@ -71,6 +73,7 @@ public class Goal extends JPanel{
 					}
 					resultLeft(goalkeeper, square);
 					resultRight(goalkeeper, square);
+					resultPosition(goalkeeper,square);
 					putIconsGoalkeeper(goalkeeper);
 					paintOccupationArea(goalkeeper);
 				}
@@ -150,6 +153,11 @@ public class Goal extends JPanel{
 			this.resultRightHand++;
 		}
 	}
+	public void resultPosition(Goalkeeper g,SquareGoal s) {
+		if(g.getPositionGoalkeeper().getLine()==s.getLine() && g.getPositionGoalkeeper().getColumn()==s.getColumn()) {
+			this.resultPosition++;
+		}
+	}
 	
 	public int getResultMachine() {
 		return resultMachine;
@@ -164,8 +172,11 @@ public class Goal extends JPanel{
 		return this.resultLeftHand;
 	}
 	
-	public int getReturnRightHand() {
+	public int getResultRightHand() {
 		return this.resultRightHand;
+	}
+	public int getResultPosition() {
+		return this.resultPosition;
 	}
 	
 	public void setResultMachine() {
@@ -186,6 +197,10 @@ public class Goal extends JPanel{
 	
 	public void setResultRightHand() {
 		this.resultRightHand=0;
+	}
+	
+	public void setResultPosition() {
+		this.resultPosition=0;
 	}
 }
 
